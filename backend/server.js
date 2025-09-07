@@ -17,7 +17,7 @@ const allowedOrigins = (process.env.CLIENT_URLS || "")
 
 // Middleware
 app.use(cors({
-  origin: allowedOrigins,
+  origin: "https://blogging-frontend-dgq7.onrender.com",
   credentials: true
 }));
 app.use(express.json());
