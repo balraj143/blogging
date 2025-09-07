@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../src/utils/axiosInstance";
 
 function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
