@@ -10,10 +10,10 @@ import adminRoutes from "./routes/adminRoutes.js";
 dotenv.config({ override: true });
 const app = express();
 
-const allowedOrigins = (process.env.CLIENT_URLS || "")
-  .split(",")
-  .map(url => url.trim());
-
+const allowedOrigins = [
+  "http://localhost:5173", // or 3000 depending on your frontend dev server
+  "https://blogging-frontend-dgq7.onrender.com"
+];
 
 // Middleware
 app.use(cors({
