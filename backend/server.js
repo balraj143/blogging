@@ -10,8 +10,16 @@ import adminRoutes from "./routes/adminRoutes.js";
 dotenv.config({ override: true });
 const app = express();
 
+const allowedOrigins = (process.env.CLIENT_URLS || "")
+  .split(",")
+  .map(url => url.trim());
+
+
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
